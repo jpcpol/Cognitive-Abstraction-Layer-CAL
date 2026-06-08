@@ -4,10 +4,21 @@
 Aural Syncro Research Lab  
 jpcpol@gmail.com
 
-**Version:** 1.3 — May 2026  
+**Version:** 1.3 — May 2026 (structure update: June 2026)  
 **DOI:** [10.5281/zenodo.20430343](https://doi.org/10.5281/zenodo.20430343)  
 **Status:** Published on Zenodo — arXiv pending endorsement (cs.AI)  
 **License:** CC BY 4.0
+
+**Research repositories:**
+
+| Layer | Repo | Paper | Status |
+|-------|------|-------|--------|
+| CAL (framework) | [Cognitive-Abstraction-Layer-CAL](https://github.com/jpcpol/Cognitive-Abstraction-Layer-CAL) | This document | Pre-paper v1.3 |
+| L2 — TCO | [TENSOR-BASED-COGNITIVE-OVERSIGHT-TCO](https://github.com/jpcpol/TENSOR-BASED-COGNITIVE-OVERSIGHT-TCO) | `L2/Documentacion/TCO_Paper_Final_v3.md` | Working paper v3.0 · CHI 2027 |
+| L3 — Tensor Volume | [Tensor-Volume-Layer-L3](https://github.com/jpcpol/Tensor-Volume-Layer-L3) | `L3/paper/CAL_L3_Paper_v0.1.md` | Draft pre-experimental · NeurIPS/ICML |
+| L4 — Meta-Inference | [Meta-Inference-Layer-L4](https://github.com/jpcpol/Meta-Inference-Layer-L4) | `L4/paper/CAL_L4_Paper_v0.1.md` | Draft pre-experimental · NeurIPS/ICML |
+
+**Collaboration:** AMD-Instinct Labs — `fa_dme` on MI300X provides the empirical O(n²) baseline for the L4 Efficiency Hypothesis (§6.2).
 
 ---
 
@@ -345,14 +356,22 @@ The governance manifold hypothesis (Section 5.6) gives semantic collapse a geome
 
 ## 8. Research Agenda
 
-| Layer | Status | Key open problem | Testable hypothesis | Target venue |
-|-------|--------|-----------------|---------------------|--------------|
-| L0 | Production | None (baseline) | — | — |
-| L1 | Instantiated by LLMs | Formal L1→L2 interface specification | LLM quality signals have SID > θ for L2 φ | — |
-| **L2** | **TCO-L2 (in preparation, CHI 2027)** | **NCF operationalization, φ calibration** | **H2: Cohen's d > 0.50; SID(L0→L2) > 0.70** | **CHI 2027** |
-| L3 | Open | Composition operator C satisfying causal preservation, temporal coherence, dimensional stability | C exists such that SID(L2→L3) > θ | NeurIPS / ICML |
-| L4 | Open | M architecture; L4 Efficiency Hypothesis | Cost(M(V)) = O(κ(V)) where κ(V) << O(n²) | NeurIPS / ICML |
-| SID | Partially defined (L2 only) | Measurement without human reference for L3–L4 | SID degrades gracefully with compression rate | Cross-layer |
+| Layer | Repo | Status | Key open problem | Testable hypothesis | Target venue |
+|-------|------|--------|-----------------|---------------------|--------------|
+| L0 | — | Production | None (baseline) | — | — |
+| L1 | — | Instantiated by LLMs | Formal L1→L2 interface specification | LLM quality signals have SID > θ for L2 φ | — |
+| **L2** | [TCO](https://github.com/jpcpol/TENSOR-BASED-COGNITIVE-OVERSIGHT-TCO) | **Working paper v3.0 · platform deployed** | **NCF operationalization, φ calibration** | **H2: Cohen's d > 0.50; SID(L0→L2) > 0.70** | **CHI 2027** |
+| L3 | [Tensor-Volume-L3](https://github.com/jpcpol/Tensor-Volume-Layer-L3) | Draft v0.1 · S4 manifold test first | Composition operator C — causal preservation + tractability | C exists such that SID(L2→L3) > 0.70; Tucker preserves causal graph | NeurIPS / ICML |
+| L4 | [Meta-Inference-L4](https://github.com/jpcpol/Meta-Inference-Layer-L4) | Draft v0.1 · O(n²) baseline active (AMD) | M architecture; L4 Efficiency Hypothesis | Cost(M(V)) = O(κ(V)) where κ(V) << O(n²) | NeurIPS / ICML |
+| SID | Cross-layer | Partially defined (L2 only) | Measurement without human reference for L3–L4 | SID degrades gracefully with compression rate | Cross-layer |
+
+**Collaboration — AMD-Instinct Labs (L4):**
+
+- **Rol 1 (active):** `fa_dme` seqLen sweep on MI300X — empirical O(n²) baseline for condition (b) of the L4 Efficiency Hypothesis
+- **Rol 2 (post gate-C):** `fa_dme` as kernel proxy for M(V); `probe_mfma_mapping.hip` for RCC empirical grounding
+- Gate: L3 composition operator C must be validated before Rol 2 begins
+
+**Dependency chain:** L3 gate-C → L4 Rol 2 → L4 Efficiency Hypothesis test (synthetic) → RCC empirical probe
 
 ---
 
