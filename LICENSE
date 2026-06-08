@@ -1,0 +1,73 @@
+# License — Cognitive Abstraction Layers (CAL) Framework
+
+Cognitive Abstraction Layers (CAL) © 2026 Juan Pablo Chancay
+
+---
+
+## License Structure
+
+This repository contains only framework documentation and the pre-paper.
+No source code is hosted here — code lives in the layer-specific sub-repos
+(L2, L3, L4), each with their own license.
+
+| Scope | Files | License |
+| ----- | ----- | ------- |
+| Research & Documentation | `README.md`, `CAL_PrePaper_v1.3.md`, `docs/`, all `.md` files | CC BY-NC 4.0 |
+
+---
+
+## CC BY-NC 4.0 — Research & Documentation
+
+This work is licensed under the Creative Commons Attribution-NonCommercial
+4.0 International License.
+
+Full legal text: <https://creativecommons.org/licenses/by-nc/4.0/legalcode>
+
+**You are free to:**
+
+- **Share** — Copy and redistribute the material in any medium or format.
+- **Adapt** — Remix, transform, and build upon the material.
+
+**Under the following conditions:**
+
+- **Attribution** — You must give appropriate credit to Juan Pablo Chancay,
+  provide a link to this repository and to the license, and indicate if
+  changes were made.
+
+- **NonCommercial** — You may not use the material for commercial purposes.
+  Commercial use requires explicit written permission from the author.
+
+---
+
+## Intellectual Property Notice
+
+The **Cognitive Abstraction Layers (CAL)** architecture, the **Semantic
+Information Density (SID)** metric, and all associated theoretical
+constructs were conceived and formalized by Juan Pablo Chancay.
+
+This repository serves as a timestamped public record of the original
+contribution, establishing intellectual priority prior to formal academic
+publication.
+
+- Pre-paper first published: May 2026 — DOI: 10.5281/zenodo.20430343
+- Repository: <https://github.com/jpcpol/Cognitive-Abstraction-Layer-CAL>
+
+---
+
+## Sub-Repo Licenses
+
+| Sub-repo | License |
+| -------- | ------- |
+| L2 — TCO | CC BY-NC 4.0 (docs) + AGPL-3.0 (src) |
+| L3 — Tensor Volume | CC BY-NC 4.0 (docs) + AGPL-3.0 (src) |
+| L4 — Meta-Inference | CC BY-NC 4.0 (docs) + AGPL-3.0 (src) |
+
+Each sub-repo is an independent git repository with its own LICENSE file.
+
+---
+
+## Disclaimer
+
+This work is provided "as is" without warranty of any kind, express or
+implied. The author makes no representations about the suitability of this
+material for any purpose.
