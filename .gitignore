@@ -1,0 +1,11 @@
+# Sub-repos independientes — cada uno tiene su propio remote
+L2/
+L3/
+L4/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.claude/
