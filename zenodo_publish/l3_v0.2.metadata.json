@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "CAL-L3: The Tensor Volume Layer — Composition Operator C and the Governance Manifold Hypothesis",
+    "creators": [
+      {
+        "name": "Chancay, Juan Pablo",
+        "affiliation": "Aural Syncro Research Lab"
+      }
+    ],
+    "description": "<p>Working paper v0.2 (characterization phase closed, ~95%) for Layer 3 (L3) of the Cognitive Abstraction Layers (CAL) architecture. Main result: the composition operator C is characterized — causal conservation under compression is preservation of the observational invariants Ω₀ = (Reachability, Coverage, Consistency), <em>not</em> reconstruction fidelity. A low-rank Tucker compression alone fabricates spurious causal edges; a structural-mask prune recovers 75% of the causal-observability headroom (U: 0.441→0.862) with no ground truth required at deployment. The residual ~25% is declared as an open frontier (ΔU≈0.138). All hypotheses were pre-registered before data collection.</p><p>Part of the CAL five-level (L0–L4) research agenda. See companion CAL pre-paper, concept DOI 10.5281/zenodo.20430343.</p>",
+    "version": "0.2",
+    "language": "eng",
+    "keywords": [
+      "causal discovery",
+      "tensor decomposition",
+      "Tucker decomposition",
+      "PCMCI",
+      "semantic compression",
+      "causal observability",
+      "CAL architecture"
+    ],
+    "license": "cc-by-nc-4.0",
+    "access_right": "open",
+    "related_identifiers": [
+      {
+        "identifier": "10.5281/zenodo.20430343",
+        "relation": "isPartOf",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "https://github.com/jpcpol/Tensor-Volume-Layer-L3",
+        "relation": "isSupplementedBy",
+        "resource_type": "software"
+      }
+    ]
+  }
+}

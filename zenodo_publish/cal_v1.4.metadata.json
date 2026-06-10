@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "Cognitive Abstraction Layers (CAL): A Research Architecture for Hierarchical Semantic Compression in AI Systems",
+    "creators": [
+      {
+        "name": "Chancay, Juan Pablo",
+        "affiliation": "Aural Syncro Research Lab"
+      }
+    ],
+    "description": "<p>Pre-paper v1.4 of the Cognitive Abstraction Layers (CAL) framework: a five-level (L0–L4) research architecture for hierarchical semantic compression of multi-agent AI pipeline state, preserving causal structure for human governance. This version (v1.4) adds the L3 closure summary (§5.7): causal conservation under compression characterized as preservation of observational invariants Ω₀ = (Reachability, Coverage, Consistency), not reconstruction fidelity; and the L4 gate-C status note (§6.2).</p><p>This is a new version of the existing CAL concept record (concept DOI 10.5281/zenodo.20430343). It supersedes the v1.3 deposit.</p>",
+    "version": "1.4",
+    "language": "eng",
+    "keywords": [
+      "semantic compression",
+      "multi-agent AI",
+      "human oversight",
+      "causal structure",
+      "tensor methods",
+      "AI governance",
+      "cognitive abstraction layers"
+    ],
+    "license": "cc-by-nc-4.0",
+    "access_right": "open",
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/jpcpol/Cognitive-Abstraction-Layer-CAL",
+        "relation": "isSupplementedBy",
+        "resource_type": "software"
+      }
+    ]
+  }
+}

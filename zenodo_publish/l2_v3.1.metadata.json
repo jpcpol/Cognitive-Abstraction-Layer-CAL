@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "Tensor-Based Cognitive Oversight (TCO-L2): A Framework for Human Orchestration of AI-Driven Software Systems",
+    "creators": [
+      {
+        "name": "Chancay, Juan Pablo",
+        "affiliation": "Aural Syncro Research Lab"
+      }
+    ],
+    "description": "<p>Working paper v3.1 formalizing Layer 2 (L2) of the Cognitive Abstraction Layers (CAL) architecture. L2 contributes the tensor framework T[d,i,j,k], the Natural Cognitive Frontier (NCF) model of human orchestration, and a between-subjects RCT design (n=40) targeting CHI 2027. The v3.1 status note records downstream validation: L3's characterization closed and L4's gate-C met; no L2 experimental claim is altered.</p><p>Part of the CAL five-level (L0–L4) research agenda. See companion CAL pre-paper, concept DOI 10.5281/zenodo.20430343.</p>",
+    "version": "3.1",
+    "language": "eng",
+    "keywords": [
+      "human-in-the-loop",
+      "AI oversight",
+      "tensor methods",
+      "multi-agent pipelines",
+      "cognitive load",
+      "software engineering",
+      "CAL architecture"
+    ],
+    "license": "cc-by-nc-4.0",
+    "access_right": "open",
+    "related_identifiers": [
+      {
+        "identifier": "10.5281/zenodo.20430343",
+        "relation": "isPartOf",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "https://github.com/jpcpol/TENSOR-BASED-COGNITIVE-OVERSIGHT-TCO",
+        "relation": "isSupplementedBy",
+        "resource_type": "software"
+      }
+    ]
+  }
+}

@@ -1,7 +1,8 @@
 # CAL — Cognitive Abstraction Layers
 
 **Author:** Juan Pablo Chancay · Aural Syncro  
-**Pre-paper:** [DOI 10.5281/zenodo.20430343](https://doi.org/10.5281/zenodo.20430343) · arXiv pending endorsement  
+**Pre-paper:** [concept DOI 10.5281/zenodo.20430343](https://doi.org/10.5281/zenodo.20430343) · v1.4: [10.5281/zenodo.20628125](https://doi.org/10.5281/zenodo.20628125) · arXiv pending endorsement  
+**Layer deposits:** L2 [10.5281/zenodo.20628131](https://doi.org/10.5281/zenodo.20628131) · L3 [10.5281/zenodo.20628133](https://doi.org/10.5281/zenodo.20628133)  
 **License:** CC BY-NC 4.0 (docs) · AGPL-3.0 (code in sub-repos)  
 **Status:** Active research — L2 validated · L3 characterization closed (~95%) · L4 baseline operator validated (L4-A), at-scale cost contrast active
 

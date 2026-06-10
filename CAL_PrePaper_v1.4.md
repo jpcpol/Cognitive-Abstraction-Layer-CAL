@@ -5,18 +5,18 @@ Aural Syncro Research Lab
 jpcpol@gmail.com
 
 **Version:** 1.4 — May 2026 (L3 results update: June 2026)  
-**DOI:** [10.5281/zenodo.20430343](https://doi.org/10.5281/zenodo.20430343) (v1.3 deposit; v1.4 adds the L3 closure summary — new Zenodo deposit pending)  
+**DOI:** [10.5281/zenodo.20430343](https://doi.org/10.5281/zenodo.20430343) (concept DOI) · this version (v1.4): [10.5281/zenodo.20628125](https://doi.org/10.5281/zenodo.20628125)  
 **Status:** Published on Zenodo — arXiv pending endorsement (cs.AI)  
-**License:** CC BY 4.0
+**License:** CC BY-NC 4.0
 
 **Research repositories:**
 
-| Layer | Repo | Paper | Status |
-|-------|------|-------|--------|
-| CAL (framework) | [Cognitive-Abstraction-Layer-CAL](https://github.com/jpcpol/Cognitive-Abstraction-Layer-CAL) | This document | Pre-paper v1.4 |
-| L2 — TCO | [TENSOR-BASED-COGNITIVE-OVERSIGHT-TCO](https://github.com/jpcpol/TENSOR-BASED-COGNITIVE-OVERSIGHT-TCO) | `L2/Documentacion/TCO_Paper_Final_v3.md` | Working paper v3.0 · CHI 2027 |
-| L3 — Tensor Volume | [Tensor-Volume-Layer-L3](https://github.com/jpcpol/Tensor-Volume-Layer-L3) | `L3/paper/` + `L3/L3_CLOSURE.md` | **Characterization closed** (~95%) · NeurIPS/ICML |
-| L4 — Meta-Inference | [Meta-Inference-Layer-L4](https://github.com/jpcpol/Meta-Inference-Layer-L4) | `L4/paper/CAL_L4_Paper_v0.1.md` | **gate-C closed**, L4-A validated · NeurIPS/ICML |
+| Layer | Repo | Paper | DOI | Status |
+|-------|------|-------|-----|--------|
+| CAL (framework) | [Cognitive-Abstraction-Layer-CAL](https://github.com/jpcpol/Cognitive-Abstraction-Layer-CAL) | This document | [10.5281/zenodo.20628125](https://doi.org/10.5281/zenodo.20628125) (concept [20430343](https://doi.org/10.5281/zenodo.20430343)) | Pre-paper v1.4 |
+| L2 — TCO | [TENSOR-BASED-COGNITIVE-OVERSIGHT-TCO](https://github.com/jpcpol/TENSOR-BASED-COGNITIVE-OVERSIGHT-TCO) | `L2/Documentacion/TCO_Paper_Final_v3.md` | [10.5281/zenodo.20628131](https://doi.org/10.5281/zenodo.20628131) | Working paper v3.1 · CHI 2027 |
+| L3 — Tensor Volume | [Tensor-Volume-Layer-L3](https://github.com/jpcpol/Tensor-Volume-Layer-L3) | `L3/paper/` + `L3/L3_CLOSURE.md` | [10.5281/zenodo.20628133](https://doi.org/10.5281/zenodo.20628133) | **Characterization closed** (~95%) · NeurIPS/ICML |
+| L4 — Meta-Inference | [Meta-Inference-Layer-L4](https://github.com/jpcpol/Meta-Inference-Layer-L4) | `L4/paper/CAL_L4_Paper_v0.1.md` | *(deposit pending)* | **gate-C closed**, L4-A validated · NeurIPS/ICML |
 
 **Collaboration:** AMD-Instinct Labs — `fa_dme` on MI300X provides the empirical O(n²) baseline (measured: n^1.90, R²=0.996) for the L4 Efficiency Hypothesis (§6.2).
 
