@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "CAL-L4: The Meta-Inference Layer — L4 Efficiency Hypothesis and the Representational Convergence Conjecture",
+    "creators": [
+      {
+        "name": "Chancay, Juan Pablo",
+        "affiliation": "Aural Syncro Research Lab"
+      }
+    ],
+    "description": "<p>Working paper v0.4 for Layer 4 (L4) of the Cognitive Abstraction Layers (CAL) architecture: meta-inference M(V) over compressed tensor volumes without human working memory as a substrate. The paper formalizes the <strong>L4 Efficiency Hypothesis</strong> (the cost of M(V) scales with the structural complexity &kappa;(V), growing far slower than O(n&sup2;) in raw-artifact count n) and the <strong>Representational Convergence Conjecture (RCC)</strong>.</p><p>Results (June 2026): conditions (a) operator C with &kappa;(V)=1296 (195.6&times; compression, from L3) and (b) the O(n&sup2;) flat-context baseline on MI300X (n^1.90&ndash;1.91, R&sup2;&asymp;0.997) are met, and the &kappa; vs n&sup2; cost contrast was <strong>executed on AMD Instinct MI300X</strong> (S5): the governance-state inference cost is bounded by &kappa;(V) and independent of n while flat-context grows ~n^1.91 &mdash; the decoupling ratio reaches 52.8&times; at sequence length 4096. This confirms the cost <em>mechanism</em> (coupling vs decoupling), not a production-scale or accuracy claim.</p><p>The compression residual was then characterized (L4-B0): ~81% of it is non-linear, so a single low-rank <em>linear</em> volume V&prime; cannot carry the governance state's causal content &mdash; the dual representation (V_Tucker, G_pruned) is terminal at this rank, and the single-V operator (L4-B) is a clean NO-GO. This is the second time the ordering causality &succ; reconstruction prevents a representational collapse. The sole remaining gate is condition (c), governance accuracy of M(V) vs flat-context, which is bound to the L2 randomized controlled trial. Hardware collaboration: AMD-Instinct Labs (MI300X, ROCm). All experiments were pre-registered before data collection.</p><p>Part of the CAL five-level (L0&ndash;L4) research agenda. See companion CAL pre-paper, concept DOI 10.5281/zenodo.20430343.</p>",
+    "version": "0.4",
+    "language": "eng",
+    "keywords": [
+      "meta-inference",
+      "efficiency hypothesis",
+      "semantic compression",
+      "governance inference",
+      "tensor volume",
+      "representational convergence",
+      "causal observability",
+      "flash attention",
+      "AMD-Instinct MI300X",
+      "CAL architecture"
+    ],
+    "license": "cc-by-nc-4.0",
+    "access_right": "open",
+    "related_identifiers": [
+      {
+        "identifier": "10.5281/zenodo.20430343",
+        "relation": "isPartOf",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "10.5281/zenodo.20628133",
+        "relation": "references",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "https://github.com/jpcpol/Meta-Inference-Layer-L4",
+        "relation": "isSupplementedBy",
+        "resource_type": "software"
+      }
+    ]
+  }
+}

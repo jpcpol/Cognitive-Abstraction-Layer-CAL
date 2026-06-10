@@ -16,7 +16,7 @@ jpcpol@gmail.com
 | CAL (framework) | [Cognitive-Abstraction-Layer-CAL](https://github.com/jpcpol/Cognitive-Abstraction-Layer-CAL) | This document | [10.5281/zenodo.20628125](https://doi.org/10.5281/zenodo.20628125) (concept [20430343](https://doi.org/10.5281/zenodo.20430343)) | Pre-paper v1.4 |
 | L2 — TCO | [TENSOR-BASED-COGNITIVE-OVERSIGHT-TCO](https://github.com/jpcpol/TENSOR-BASED-COGNITIVE-OVERSIGHT-TCO) | `L2/Documentacion/TCO_Paper_Final_v3.md` | [10.5281/zenodo.20628131](https://doi.org/10.5281/zenodo.20628131) | Working paper v3.1 · CHI 2027 |
 | L3 — Tensor Volume | [Tensor-Volume-Layer-L3](https://github.com/jpcpol/Tensor-Volume-Layer-L3) | `L3/paper/` + `L3/L3_CLOSURE.md` | [10.5281/zenodo.20628133](https://doi.org/10.5281/zenodo.20628133) | **Characterization closed** (~95%) · NeurIPS/ICML |
-| L4 — Meta-Inference | [Meta-Inference-Layer-L4](https://github.com/jpcpol/Meta-Inference-Layer-L4) | `L4/paper/CAL_L4_Paper_v0.1.md` (v0.4) | *(deposit pending)* | **S5 mechanism confirmed** · **L4-B0 NO-GO** (dual terminal) · cond. (c) open · NeurIPS/ICML |
+| L4 — Meta-Inference | [Meta-Inference-Layer-L4](https://github.com/jpcpol/Meta-Inference-Layer-L4) | `L4/paper/CAL_L4_Paper_v0.1.md` (v0.4) | [10.5281/zenodo.20634465](https://doi.org/10.5281/zenodo.20634465) | **S5 mechanism confirmed** · **L4-B0 NO-GO** (dual terminal) · cond. (c) open · NeurIPS/ICML |
 
 **Collaboration:** AMD-Instinct Labs — `fa_dme`/`fa_robust` on MI300X provide the empirical O(n²) baseline (n^1.90–1.91, R²≈0.997); the **S5 κ vs n² cost contrast is run and frozen** (D(n)→52.8× @ seqLen 4096, mechanism confirmed) and the research kernel is validated end-to-end in a full LLM (Steps 2-A/2-C). See §6.2.
 

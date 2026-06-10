@@ -2,7 +2,7 @@
 
 **Author:** Juan Pablo Chancay · Aural Syncro  
 **Pre-paper:** [concept DOI 10.5281/zenodo.20430343](https://doi.org/10.5281/zenodo.20430343) · v1.4: [10.5281/zenodo.20628125](https://doi.org/10.5281/zenodo.20628125) · arXiv pending endorsement  
-**Layer deposits:** L2 [10.5281/zenodo.20628131](https://doi.org/10.5281/zenodo.20628131) · L3 [10.5281/zenodo.20628133](https://doi.org/10.5281/zenodo.20628133)  
+**Layer deposits:** L2 [10.5281/zenodo.20628131](https://doi.org/10.5281/zenodo.20628131) · L3 [10.5281/zenodo.20628133](https://doi.org/10.5281/zenodo.20628133) · L4 [10.5281/zenodo.20634465](https://doi.org/10.5281/zenodo.20634465)  
 **License:** CC BY-NC 4.0 (docs) · AGPL-3.0 (code in sub-repos)  
 **Status:** Active research — L2 validated · L3 characterization closed (~95%) · L4 efficiency-mechanism confirmed on MI300X (S5) · L4 representation closed (L4-B0 NO-GO: dual is terminal). Sole open gate: L4 governance accuracy (condition c, RCT-bound).
 
