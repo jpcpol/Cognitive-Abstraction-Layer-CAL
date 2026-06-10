@@ -27,12 +27,12 @@ import requests
 HERE = Path(__file__).resolve().parent
 CAL_ROOT = HERE.parent  # .../CAL
 
-# .env holding `zenodo_token`. The token currently lives in the (legacy) TCO checkout;
-# checked in order until one yields the key. Move it somewhere durable before deleting TCO.
+# .env holding `zenodo_token`. CAL/.env is the durable home (gitignored); the legacy
+# TCO/.env is kept as a fallback only while that checkout still exists. Checked in order.
 ENV_CANDIDATES = [
+    CAL_ROOT / ".env",
     Path("c:/Users/Usuario/Documents/Aural Syncro/TCO/.env"),
     CAL_ROOT / "L2" / ".env",
-    CAL_ROOT / ".env",
 ]
 
 CAL_CONCEPT_DOI = "10.5281/zenodo.20430343"  # for reference only; L4 is a NEW deposit
