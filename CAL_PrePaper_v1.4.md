@@ -4,8 +4,8 @@
 Aural Syncro Research Lab  
 jpcpol@gmail.com
 
-**Version:** 1.3 — May 2026 (structure update: June 2026)  
-**DOI:** [10.5281/zenodo.20430343](https://doi.org/10.5281/zenodo.20430343)  
+**Version:** 1.4 — May 2026 (L3 results update: June 2026)  
+**DOI:** [10.5281/zenodo.20430343](https://doi.org/10.5281/zenodo.20430343) (v1.3 deposit; v1.4 adds the L3 closure summary — new Zenodo deposit pending)  
 **Status:** Published on Zenodo — arXiv pending endorsement (cs.AI)  
 **License:** CC BY 4.0
 
@@ -13,12 +13,14 @@ jpcpol@gmail.com
 
 | Layer | Repo | Paper | Status |
 |-------|------|-------|--------|
-| CAL (framework) | [Cognitive-Abstraction-Layer-CAL](https://github.com/jpcpol/Cognitive-Abstraction-Layer-CAL) | This document | Pre-paper v1.3 |
+| CAL (framework) | [Cognitive-Abstraction-Layer-CAL](https://github.com/jpcpol/Cognitive-Abstraction-Layer-CAL) | This document | Pre-paper v1.4 |
 | L2 — TCO | [TENSOR-BASED-COGNITIVE-OVERSIGHT-TCO](https://github.com/jpcpol/TENSOR-BASED-COGNITIVE-OVERSIGHT-TCO) | `L2/Documentacion/TCO_Paper_Final_v3.md` | Working paper v3.0 · CHI 2027 |
-| L3 — Tensor Volume | [Tensor-Volume-Layer-L3](https://github.com/jpcpol/Tensor-Volume-Layer-L3) | `L3/paper/CAL_L3_Paper_v0.1.md` | Draft pre-experimental · NeurIPS/ICML |
-| L4 — Meta-Inference | [Meta-Inference-Layer-L4](https://github.com/jpcpol/Meta-Inference-Layer-L4) | `L4/paper/CAL_L4_Paper_v0.1.md` | Draft pre-experimental · NeurIPS/ICML |
+| L3 — Tensor Volume | [Tensor-Volume-Layer-L3](https://github.com/jpcpol/Tensor-Volume-Layer-L3) | `L3/paper/` + `L3/L3_CLOSURE.md` | **Characterization closed** (~95%) · NeurIPS/ICML |
+| L4 — Meta-Inference | [Meta-Inference-Layer-L4](https://github.com/jpcpol/Meta-Inference-Layer-L4) | `L4/paper/CAL_L4_Paper_v0.1.md` | **gate-C closed**, L4-A validated · NeurIPS/ICML |
 
-**Collaboration:** AMD-Instinct Labs — `fa_dme` on MI300X provides the empirical O(n²) baseline for the L4 Efficiency Hypothesis (§6.2).
+**Collaboration:** AMD-Instinct Labs — `fa_dme` on MI300X provides the empirical O(n²) baseline (measured: n^1.90, R²=0.996) for the L4 Efficiency Hypothesis (§6.2).
+
+> **v1.4 update note (June 2026).** Since the v1.3 deposit, L3's characterization phase closed. The headline result reorders the framework: **reconstruction fidelity ≠ causal conservation** — variance-optimal compression (Tucker) destroys the causal structure governance needs. CAL now commits to the validation order **Causality ≻ Topology ≻ Reconstruction**. A ground-truth-free causal metric (U) was validated, and causal conservation was shown to be **structural sparsity preservation** (an operator is causally conservative iff it preserves the observational invariants Ω₀ = reachability, coverage, consistency under compression). See §5.7 and the L3 closure document. This note records the evolution from the v1.3 open-problem framing; the body sections below are annotated where superseded rather than rewritten, preserving the citable v1.3 record.
 
 ---
 
@@ -230,6 +232,30 @@ If true, the consequences propagate through the entire architecture:
 
 This positions topology — not compression ratio — as the central mathematical object of CAL. The right question is not "by how much did we compress?" but "did we preserve the topology of the governance manifold?"
 
+> **[v1.4 refinement]** L3's results sharpen this further: the central object is **causal structure**, not topology *per se*. The governance manifold was confirmed low-dimensional (dim≈2–3, trustworthiness ≥0.96) — but found to be *static* (reconstructible with the time axis averaged out) while causality is *temporal*. A purely topological criterion (`preserve the manifold`) can therefore be satisfied while causal structure is destroyed. The refined question is "did we preserve the **causal** structure?" — with topology subordinate to causality (see §5.7).
+
+---
+
+## 5.7 L3 Results — Causal Conservation under Compression (v1.4, June 2026)
+
+This section summarizes the L3 characterization phase, which closed after the v1.3 deposit. It supersedes the "open problem" framing of §5.2–§5.4 for the specific question of *what causal preservation requires*; the formal requirements (Properties 1–4) stand, but their relative priority and the operative success criterion are now established empirically. Full record: `L3/L3_CLOSURE.md`.
+
+**The headline result — reconstruction ≠ causality.** Low-rank Tucker decomposition (the §5.3.2 candidate) preserves 98% of variance and is tractable (Property 4 holds, κ(V) sub-linear in n, 195.6× compression) — yet it **destroys** the causal structure between quality dimensions. On a synthetic corpus with known causal ground truth, against a perfect raw control (causal F1 = 1.000), the Tucker reconstruction scored causal F1 = 0.135, fabricating spurious causal edges. Variance-optimal and causality-preserving compression are *different objectives*.
+
+**The reordering.** CAL commits to a validation order: **Causality ≻ Topology ≻ Reconstruction.** An operator must demonstrate causal conservation before geometric/topological fidelity, never the reverse. This promotes the §7.1 "silent failure mode" (acceptable contemporaneous SID with destroyed temporal causality) from a footnote to the framework's primary constraint.
+
+**A ground-truth-free causal metric (U).** Because no causal graph exists at deployment, causal conservation must be measurable without ground truth. We validated **U** — the correlation of off-diagonal PCMCI val-matrix flow — via a calibration test (it orders a family of compressions by their known causal fidelity, and collapses when causality is destroyed at fixed marginals). U is both a validated *instrument* and a usable optimization *objective*. A key negative result: causal fidelity is carried by **discrete structure**, not continuous magnitudes — differentiable magnitude proxies fail to reproduce U's ordering.
+
+**The operator and the operative property.** C is built as `C = C_causal ∘ C_compress` (Tucker compresses; a causal step preserves structure). The success criterion that closed L3:
+
+> **An operator is *causally conservative* iff it preserves the observational invariants Ω₀ = (R, C, S) — reachability, coverage, consistency — under compression, not reconstruction fidelity.**
+
+Tucker's failure mode was diagnosed precisely: it preserves coverage (recovers true edges) and consistency (no sign errors) but **fabricates spurious edges** (reachability and edge count explode). A structural prune to the causal support recovers **75% of the causal-conservation gap with no ground truth** (U: 0.441 → 0.862; the deployment prune equals the ground-truth-oracle prune).
+
+**Consequence for the Governance Manifold Hypothesis (§5.6).** dim(M_gov)≈2–3 is confirmed, but M_gov is *static*; whether a low-dimensional **causal** manifold exists is reframed as an open L4 question. The manifold is retained as a descriptor, not as the projection that defines C.
+
+**Status.** L3 characterization is ~95% closed; the residual (the gap from U=0.862 to 1.0) is a declared frontier (flow magnitude / higher-order structure), not a defect. The composition operator delivered to L4 is the dual representation `V = (V_Tucker, G_pruned)` with κ(V)=1296 — closing condition (a) of the L4 Efficiency Hypothesis (§6.2).
+
 ---
 
 ## 6. L4: Meta-Inference Layer
@@ -258,6 +284,8 @@ The fundamental motivation for the CAL hierarchy is that semantic compression re
 This is not a claim that meta-inference is exponentially cheaper than token-level attention in all cases. It is a claim that if semantic abstraction is semantically conservative, inference cost can be decoupled from the volume of the original artifact stream and coupled instead to the structural complexity of the compressed governance state. This hypothesis connects to the observation that current transformer architectures re-evaluate redundant relationships at every forward pass [Tay et al. 2022]; a hierarchy of semantic abstractions would eliminate this redundancy by compressing it away before inference.
 
 Empirical testing of this hypothesis requires: (a) a concrete definition of C (the composition operator) and κ(V) (the structural complexity of V), (b) a comparison of M(V) cost vs. equivalent flat-context inference on raw artifacts, and (c) measurement of governance accuracy under both approaches. TCO-L2 provides the L2 baseline for (c).
+
+> **[v1.4 status]** Conditions (a) and (b) are now **met** (June 2026). (a): L3 closed with `C = C_causal ∘ C_compress` delivering κ(V)=1296 (effective rank of the Tucker core, 195.6× compression) — the first of the three κ(V) candidates above, made concrete (§5.7). (b): AMD-Instinct measured the flat-context O(n²) curve on MI300X at n^1.90 (R²=0.996, confirmed quadratic). The κ vs n² cost contrast is therefore runnable on hardware; condition (c) — governance accuracy of M(V) vs flat-context — remains the open gate (RCT-adjacent). The hypothesis is **not yet proven**: (a)+(b) make it *testable*, not *confirmed*.
 
 ### 6.3 Open Research Questions at L4
 
@@ -361,8 +389,8 @@ The governance manifold hypothesis (Section 5.6) gives semantic collapse a geome
 | L0 | — | Production | None (baseline) | — | — |
 | L1 | — | Instantiated by LLMs | Formal L1→L2 interface specification | LLM quality signals have SID > θ for L2 φ | — |
 | **L2** | [TCO](https://github.com/jpcpol/TENSOR-BASED-COGNITIVE-OVERSIGHT-TCO) | **Working paper v3.0 · platform deployed** | **NCF operationalization, φ calibration** | **H2: Cohen's d > 0.50; SID(L0→L2) > 0.70** | **CHI 2027** |
-| L3 | [Tensor-Volume-L3](https://github.com/jpcpol/Tensor-Volume-Layer-L3) | Draft v0.1 · S4 manifold test first | Composition operator C — causal preservation + tractability | C exists such that SID(L2→L3) > 0.70; Tucker preserves causal graph | NeurIPS / ICML |
-| L4 | [Meta-Inference-L4](https://github.com/jpcpol/Meta-Inference-Layer-L4) | Draft v0.1 · O(n²) baseline active (AMD) | M architecture; L4 Efficiency Hypothesis | Cost(M(V)) = O(κ(V)) where κ(V) << O(n²) | NeurIPS / ICML |
+| L3 | [Tensor-Volume-L3](https://github.com/jpcpol/Tensor-Volume-Layer-L3) | **Characterization closed (~95%)** · see §5.7, `L3_CLOSURE.md` | Causal conservation = structural sparsity preservation (Ω₀); residual 25% = frontier | ~~Tucker preserves causal graph~~ → refuted; *structural prune recovers 75% of causal headroom, no ground truth* | NeurIPS / ICML |
+| L4 | [Meta-Inference-L4](https://github.com/jpcpol/Meta-Inference-Layer-L4) | **gate-C closed** · L4-A validated · κ vs n² contrast active | Production M(V); single-V operator (L4-B) | Cost(M(V)) = O(κ(V)) where κ(V) << O(n²); cond. (a)+(b) met, (c) open | NeurIPS / ICML |
 | SID | Cross-layer | Partially defined (L2 only) | Measurement without human reference for L3–L4 | SID degrades gracefully with compression rate | Cross-layer |
 
 **Collaboration — AMD-Instinct Labs (L4):**
